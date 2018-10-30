@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dalmarnocks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dalmarnocks.each do |dalmarnock| %>
+      <tr>
+        <td><%= dalmarnock.timestamp %></td>
+        <td><%= dalmarnock.value %></td>
+        <td><%= link_to 'Show', dalmarnock %></td>
+        <td><%= link_to 'Edit', edit_dalmarnock_path(dalmarnock) %></td>
+        <td><%= link_to 'Destroy', dalmarnock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dalmarnock', new_dalmarnock_path %>

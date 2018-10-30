@@ -1,0 +1,2 @@
+class Dalmarnock < ApplicationRecord
+end

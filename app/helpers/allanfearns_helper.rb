@@ -1,0 +1,2 @@
+module AllanfearnsHelper
+end

@@ -1,0 +1,29 @@
+ <div id="container" style="width:100%; height:400px;"></div>
+Now we add more 'script' tags to hold the javascript, which will call the Highchart file loaded earlier.
+<script type="text/javascript">
+$(function () { 
+    var myChart = Highcharts.chart('container', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Temperature and Rainfall'
+        },
+        xAxis: {
+            categories: <%=raw @temperature_timestamps %>
+        },
+        yAxis: {
+            title: {
+                text: 'Units'
+            }
+        },
+        series: [{
+            name: 'Temperature',
+            data: <%=raw @temperature_values %>
+        }, {
+            name: 'Rainfall',
+            data: <%=raw @rainfall_values %>
+        }]
+    });
+});
+</script>

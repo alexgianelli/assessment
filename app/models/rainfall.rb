@@ -1,0 +1,2 @@
+class Rainfall < ApplicationRecord
+end

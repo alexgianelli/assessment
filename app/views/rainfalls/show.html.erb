@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Timestamp:</strong>
+  <%= @rainfall.timestamp %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @rainfall.value %>
+</p>
+
+<%= link_to 'Edit', edit_rainfall_path(@rainfall) %> |
+<%= link_to 'Back', rainfalls_path %>

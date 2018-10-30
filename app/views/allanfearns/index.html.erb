@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Allanfearns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>Value</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @allanfearns.each do |allanfearn| %>
+      <tr>
+        <td><%= allanfearn.timestamp %></td>
+        <td><%= allanfearn.value %></td>
+        <td><%= link_to 'Show', allanfearn %></td>
+        <td><%= link_to 'Edit', edit_allanfearn_path(allanfearn) %></td>
+        <td><%= link_to 'Destroy', allanfearn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Allanfearn', new_allanfearn_path %>

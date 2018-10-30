@@ -1,0 +1,2 @@
+class Harelaw < ApplicationRecord
+end

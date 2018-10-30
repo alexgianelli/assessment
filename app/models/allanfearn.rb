@@ -1,0 +1,2 @@
+class Allanfearn < ApplicationRecord
+end

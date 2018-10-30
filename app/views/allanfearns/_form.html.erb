@@ -1,0 +1,27 @@
+<%= form_with(model: allanfearn, local: true) do |form| %>
+  <% if allanfearn.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(allanfearn.errors.count, "error") %> prohibited this allanfearn from being saved:</h2>
+
+      <ul>
+      <% allanfearn.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :timestamp %>
+    <%= form.text_field :timestamp %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

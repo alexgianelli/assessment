@@ -1,0 +1,39 @@
+<h1>Locations Page</h1>
+<h2>Harelaw Map</h2>
+<iframe src='https://maps.google.com/maps?q=55.91651494,-3.086776845&amp;output=embed' frameborder='0' style='border:0' width='400' height='300' allowfullscreen></iframe>
+<h2>Dalmarnock Map</h2>
+<iframe src='https://maps.google.com/maps?q=55.8374507,-4.216965486&amp;output=embed' frameborder='0' style='border:0' width='400' height='300' allowfullscreen></iframe>
+<h2>Allanfearn Page</h2>
+<iframe src='https://maps.google.com/maps?q=57.499141747,-4.151564133&amp;output=embed' frameborder='0' style='border:0' width='400' height='300' allowfullscreen></iframe>
+<div id="container" style="width:100%; height:400px;"></div>
+
+<script type="text/javascript">
+$(function () { 
+    var myChart = Highcharts.chart('container', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Rainfall at Harelaw, Allanfearn and Dalmarnock'
+        },
+        xAxis: {
+            categories: <%=raw @harelaw_timestamps %>
+        },
+        yAxis: {
+            title: {
+                text: 'Units (mm)'
+            }
+        },
+        series: [{
+            name: 'Harelaw',
+            data: <%=raw @harelaw_values %>
+        },{
+            name: 'Dalmarnock',
+            data: <%=raw @dalmarnock_values %>
+        }, {
+            name: 'Allanfearn',
+            data: <%=raw @allanfearn_values %>
+        }]
+    });
+});
+</script>
